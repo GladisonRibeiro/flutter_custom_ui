@@ -744,10 +744,10 @@ class ButtonsConfigTheme {
         OutlinedButton.styleFrom(
           onSurface: AppTheme().colors.buttonOutlineLabelColor,
           primary: AppTheme().colors.buttonOutlineLabelColor,
-          minimumSize: this.minimumSizeButton,
-          padding: this.paddingButton,
-          shape: this.shapeButton,
-          fixedSize: this.minimumSizeButton,
+          minimumSize: AppTheme().buttons.minimumSizeButton,
+          padding: AppTheme().buttons.paddingButton,
+          shape: AppTheme().buttons.shapeButton,
+          fixedSize: AppTheme().buttons.minimumSizeButton,
         ).copyWith(
           side: MaterialStateProperty.resolveWith<BorderSide>(
             (Set<MaterialState> states) {
@@ -772,16 +772,16 @@ class ButtonsConfigTheme {
         ElevatedButton.styleFrom(
           onPrimary: AppTheme().colors.buttonElevatedLabelColor,
           primary: AppTheme().colors.buttonElevatedBackgroundColor,
-          minimumSize: this.minimumSizeButton,
-          padding: this.paddingButton,
-          shape: this.shapeButton,
-          elevation: this.elevationButton,
-          fixedSize: this.minimumSizeButton,
+          minimumSize: AppTheme().buttons.minimumSizeButton,
+          padding: AppTheme().buttons.paddingButton,
+          shape: AppTheme().buttons.shapeButton,
+          elevation: AppTheme().buttons.elevationButton,
+          fixedSize: AppTheme().buttons.minimumSizeButton,
         ).copyWith(
           elevation: MaterialStateProperty.resolveWith<double?>(
             (Set<MaterialState> states) {
               if (states.contains(MaterialState.pressed)) {
-                return this.elevationButtonOnPressed;
+                return AppTheme().buttons.elevationButtonOnPressed;
               }
               return null;
             },
@@ -818,10 +818,11 @@ class ButtonsConfigTheme {
               AppTheme().colors.buttonTextLabelColor ?? buttonTextLabelColor,
           primary:
               AppTheme().colors.buttonTextLabelColor ?? buttonTextLabelColor,
-          minimumSize: this.minimumSizeButton ?? minimumSizeButton,
-          padding: this.paddingButton ?? paddingButton,
-          shape: this.shapeButton ?? shapeButton,
-          fixedSize: this.minimumSizeButton ?? minimumSizeButton,
+          minimumSize:
+              AppTheme().buttons.minimumSizeButton ?? minimumSizeButton,
+          padding: AppTheme().buttons.paddingButton ?? paddingButton,
+          shape: AppTheme().buttons.shapeButton ?? shapeButton,
+          fixedSize: AppTheme().buttons.minimumSizeButton ?? minimumSizeButton,
         );
   }
 
